@@ -13,10 +13,10 @@ import { logWrapper } from "../utils/log-wrapper";
 export const ErrorHandler: ErrorRequestHandler = (err: CustomError | unknown, req: Request, res: Response, next: NextFunction) => {
   if (err instanceof CustomError) {
     logWrapper.LogCustomError(err);
-    res.status(err.statusCode).json({ status: err.statusCode, details: err.serializeErrors() });
+    return res.status(err.statusCode).json({ status: err.statusCode, details: err.serializeErrors() });
   }
   logWrapper.LogException(err);
-  res.status(500).json({ status: 500, details: [{ message: "Internal Server Error" }] });
+  return res.status(500).json({ status: 500, details: [{ message: "Internal Server Error" }] });
 
-  next();
+  //next();
 };
