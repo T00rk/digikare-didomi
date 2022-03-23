@@ -40,4 +40,4 @@ Create a .env file and define the following :
 | /users  | POST    | Create a new User   | { email: string! }                                                              |  - 	    |
 | /users  | GET     | Get current User    | -                                                                               |  - 	    |
 | /users  | DELETE  | Delete current User | -                                                                               |  - 	    |
-| /events | POST    | Create a new Event  | { id: string ("email_notifications"|"sms_notifications")!, enabled: boolean! }  |  - 	    |
+| /events | POST    | Create a new Event  | { id: string ("email_notifications" / "sms_notifications")!, enabled: boolean! }|  - 	    |
